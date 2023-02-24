@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAapp.Data", "QAapp.Data\QAapp.Data.csproj", "{1D2BE48E-27A7-4C58-9001-D8AAFE1FBD8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAapp.CMD", "QAapp.CMD\QAapp.CMD.csproj", "{EC85195C-8EFF-451F-88ED-12164A218A18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D2BE48E-27A7-4C58-9001-D8AAFE1FBD8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2BE48E-27A7-4C58-9001-D8AAFE1FBD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2BE48E-27A7-4C58-9001-D8AAFE1FBD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2BE48E-27A7-4C58-9001-D8AAFE1FBD8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC85195C-8EFF-451F-88ED-12164A218A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC85195C-8EFF-451F-88ED-12164A218A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC85195C-8EFF-451F-88ED-12164A218A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC85195C-8EFF-451F-88ED-12164A218A18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FF7D639-C527-462B-A01B-EC4F02339C25}
+	EndGlobalSection
+EndGlobal
