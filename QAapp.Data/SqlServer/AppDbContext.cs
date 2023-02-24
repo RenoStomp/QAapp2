@@ -14,12 +14,14 @@ namespace QAapp.Data.SqlServer
             modelBuilder.Entity<Client>()
                 .HasMany(o => o.Orders)
                 .WithOne(o => o.Client)
-                .IsRequired();
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Client)
                 .WithMany(o => o.Orders)
-                .HasForeignKey(o => o.ClientID);
+                .HasForeignKey(o => o.ClientID)
+                .OnDelete(DeleteBehavior.Cascade);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
