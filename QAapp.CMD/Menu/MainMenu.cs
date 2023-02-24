@@ -6,5 +6,10 @@
         {
 
         }
+
+        public static void ShowFirstPage()
+        {
+
+        }
     }
 }

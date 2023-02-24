@@ -1,12 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using QAapp.CMD.Menu;
 
-namespace QAapp.CMD
-{
-    internal class Program
-    {
-    }
-}
+MainMenu.Execute();
