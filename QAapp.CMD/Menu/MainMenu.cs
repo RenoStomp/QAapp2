@@ -10,7 +10,7 @@
         {
             Console.CursorVisible = false;
             Console.Clear();
-            //int index = 0;
+
             MenuHelper.ShowOptionsAndChoose(_title, _lines, out int index);
             switch(index)
             {
@@ -26,11 +26,13 @@
         public static void ShowClients()
         {
             Console.Clear();
+
             Console.WriteLine("CLIENTS");
         }
         public static void ShowOrders() 
         {
             Console.Clear();
+
             Console.WriteLine("ORDERS");
         }
     }

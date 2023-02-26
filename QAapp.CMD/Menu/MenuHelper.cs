@@ -1,6 +1,8 @@
-﻿namespace QAapp.CMD.Menu
+﻿using QAapp.CMD.Menu.Blank;
+
+namespace QAapp.CMD.Menu
 {
-    public class MenuHelper
+    public static class MenuHelper
     {
 
         public static void ShowOptionsAndChoose(string title, List<string> lines, out int index)
@@ -32,7 +34,7 @@
 
             if(keyInfo.Key == ConsoleKey.Escape) 
             {
-                Environment.Exit(0);
+                LastMessage.TheEnd();
             }
 
         }
