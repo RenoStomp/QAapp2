@@ -5,6 +5,9 @@
     /// </summary>
     internal static class LastMessage
     {
+        /// <summary>
+        /// IT WILL DO NOTHING! DVIGAYSYA DALSHE! TEBE TUT DELAT NECHEGO!
+        /// </summary>
         internal static void TheEnd()
         {
             Console.ForegroundColor = ConsoleColor.Red;

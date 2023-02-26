@@ -5,7 +5,7 @@ namespace QAapp.CMD.Menu
 {
     public class MainMenu
     {
-        private List<string> _lines;
+        private List<string> _options;
         private string _title;
 
         private readonly DbRepository<Order> _orderController;
@@ -18,14 +18,14 @@ namespace QAapp.CMD.Menu
         }
         public void Execute()
         {
-            _lines = new() { "Clients", "Orders" };
+            _options = new() { "Clients", "Orders" };
             _title = "MAIN MENU\n\n" +
                      "Please choose an option:";
 
             Console.CursorVisible = false;
             Console.Clear();
 
-            MenuHelper.ShowOptionsAndChoose(_title, _lines, out int index);
+            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
             switch (index)
             {
                 case 0:

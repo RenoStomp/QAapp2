@@ -5,10 +5,10 @@ namespace QAapp.CMD.Menu
     public static class MenuHelper
     {
 
-        public static void ShowOptionsAndChoose(string title, List<string> lines, out int index)
+        public static void ShowOptionsAndChoose(string title, List<string> options, out int index)
         {
             index = 0;
-            ShowOptions(title, lines, index);
+            ShowOptions(title, options, index);
             ConsoleKeyInfo keyInfo;
             do
             {
@@ -16,18 +16,18 @@ namespace QAapp.CMD.Menu
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.DownArrow:
-                        if (index + 1 < lines.Count)
+                        if (index + 1 < options.Count)
                         {
                             index++;
                         }
-                        ShowOptions(title, lines, index);
+                        ShowOptions(title, options, index);
                         break;
                     case ConsoleKey.UpArrow:
                         if (index - 1 >= 0)
                         {
                             index--;
                         }
-                        ShowOptions(title, lines, index);
+                        ShowOptions(title, options, index);
                         break;
                 }
             } while (keyInfo.Key != ConsoleKey.Enter && keyInfo.Key != ConsoleKey.Escape);

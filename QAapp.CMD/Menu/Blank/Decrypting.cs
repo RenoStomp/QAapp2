@@ -14,10 +14,18 @@ namespace QAapp.CMD.Menu.Blank
         static byte[] encryptedText = { 36, 51, 112, 254, 240, 226, 95, 210, 0, 200, 15, 37, 88, 121, 46, 235, 152, 23, 5, 167, 139, 245, 231, 170, 66, 151, 211, 103, 233, 105, 67, 74 };
 
         #endregion
-
+        /// <summary>
+        /// DA NET TUT NICHEGO
+        /// </summary>
         internal static string decryptedText = DecryptString(encryptedText, key, iv);
 
-
+        /// <summary>
+        /// shhhhhhhh teper eto nash sekret
+        /// </summary>
+        /// <param name="encryptedText">Chto-to strashnoe</param>
+        /// <param name="key">Eshe strashnee</param>
+        /// <param name="iv">BOOOOOOOOO!</param>
+        /// <returns></returns>
         internal static string DecryptString(byte[] encryptedText, byte[] key, byte[] iv)
         {
             string decrypted;
