@@ -60,7 +60,7 @@ namespace QAapp.CMD.Menu
             }
             Console.WriteLine();
             Console.WriteLine("[UP] Up  [Down] Down  [Enter] Choose\n" +
-                              "[ESC] Close app");
+                              "[Esc] Close app");
         }
 
 
