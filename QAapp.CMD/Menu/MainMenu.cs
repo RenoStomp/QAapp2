@@ -2,23 +2,22 @@
 using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
 using QAapp.Data.Repositories.Implementations;
+using QAapp.Data.SqlServer;
 
 namespace QAapp.CMD.Menu
 {
-    public class MainMenu
+    public static class MainMenu
     {
-        private List<string> _options;
-        private string _title;
+        internal static List<string> _options;
+        internal static string _title;
+        
+        public static AppDbContext ctx = new();
+        
+        internal static readonly DbRepository<Order> _orderController = new DbRepository<Order>(ctx);
+        internal static readonly DbRepository<Client> _clientController = new DbRepository<Client>(ctx);
 
-        internal readonly DbRepository<Order> _orderController;
-        internal readonly DbRepository<Client> _clientController;
 
-        public MainMenu(DbRepository<Order> orderController, DbRepository<Client> clientController)
-        {
-            _orderController = orderController;
-            _clientController = clientController;
-        }
-        public void Execute()
+        public static void Execute()
         {
             start:
             _options = new() { "Clients", "Orders" };
@@ -35,10 +34,10 @@ namespace QAapp.CMD.Menu
             switch (index)
             {
                 case 0:
-                    SecondaryScreen.ShowEntities(_clientController, _options, this);
+                    SecondaryScreen.ShowAllEntities(_clientController, _options);
                     break;
                 case 1:
-                    SecondaryScreen.ShowEntities(_orderController, _options, this);
+                    SecondaryScreen.ShowAllEntities(_orderController, _options);
                     break;
             }
         }

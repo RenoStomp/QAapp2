@@ -7,7 +7,7 @@ namespace QAapp.CMD.Menu
 {
     public static class SecondaryScreen
     {
-        public static void ShowEntities<T>(DbRepository<T> controller, List<string> options, MainMenu menu)
+        public static void ShowAllEntities<T>(DbRepository<T> controller, List<string> options)
             where T : BaseEntity
         {
             List<T> entities = controller.ReadAll();
@@ -27,33 +27,36 @@ namespace QAapp.CMD.Menu
             }
             MenuHelper.ShowOptionsAndChoose(title, options, out int index);
 
-            SecondaryScreenChoise<T>(index, entities, menu);
+            SecondaryScreenChoise<T>(index, entities);
 
             Console.ReadKey();
         }
-        public static void SecondaryScreenChoise<T>(int index, List<T> list, MainMenu menu)
+        public static void SecondaryScreenChoise<T>(int index, List<T> list)
             where T : BaseEntity
         {
             switch (index)
             {
                 case 0:
 
+                    Environment.Exit(0);
                     break;
 
                 case 1:
 
+                    Environment.Exit(0);
                     break;
 
                 case 2:
 
+                    Environment.Exit(0);
                     break;
 
                 case 3:
-                    ShowOrdersController<T>.ShowOrders(list, menu);
+                    ShowOrdersController<T>.ShowOrders(list);
                     break;
 
                 case 4:
-                    menu.Execute();
+                    MainMenu.Execute();
                     break;
             }
         }
