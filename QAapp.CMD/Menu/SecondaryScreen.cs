@@ -23,8 +23,14 @@ namespace QAapp.CMD.Menu
             else if(typeof(T) == typeof(Order))
             {
                 title = "Orders list:\n" +
-                     "ID | Description | Order's date | Client's name | Price | Closing date";
+                     "ID | Description | Order's date | Client's name | Price | Closing date\n";
             }
+            
+            foreach (var entity in entities)
+            {
+                title += entity.ToString() + "\n";
+            }
+
             MenuHelper.ShowOptionsAndChoose(title, options, out int index);
 
             SecondaryScreenChoise<T>(index, entities);
@@ -60,51 +66,6 @@ namespace QAapp.CMD.Menu
             }
         }
 
-        //public static void ShowClients(DbRepository<Client> _clientController, List<string> options, MainMenu menu)
-        //{
-
-        //    List<Client> clients = _clientController.ReadAll();
-
-        //    Console.Clear();
-
-        //    string title = "Clients list:\n" +
-        //             "ID | Name | Surname | Orders count | Date added | Phone number\n";
-        //    foreach (Client client in clients)
-        //    {
-        //        title += client.ToString() + "\n";
-        //    }
-
-
-
-        //    MenuHelper.ShowOptionsAndChoose(title, options, out int index);
-
-        //    SecondaryScreenChoise<Client>(index, clients, menu);
-
-
-        //    Console.ReadKey();
-
-        //}
-        //public static void ShowOrders(DbRepository<Order> _orderController, List<string> options, MainMenu menu)
-        //{
-
-        //    List<Order> orders = _orderController.ReadAll();
-
-        //    Console.Clear();
-
-        //    string title = "Orders list:\n" +
-        //             "ID | Description | Client's name | Price | Closing date";
-        //    foreach (Order order in orders)
-        //    {
-        //        title += order.ToString() + "\n";
-        //    }
-
-        //    MenuHelper.ShowOptionsAndChoose(title, options, out int index);
-
-        //    SecondaryScreenChoise<Order>(index, orders, menu);
-
-
-        //    Console.ReadKey();
-        //}
 
 
     }

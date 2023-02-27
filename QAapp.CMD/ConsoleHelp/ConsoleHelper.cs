@@ -71,8 +71,9 @@ namespace QAapp.CMD.ConsoleHelp
 
             return $"+996({MobileOperatorNumbers}){correctNumbers}";
         }
-        public static DateTime GetDateFromConsole()
+        public static DateTime GetDateFromConsole(string fieldName)
         {
+            Console.WriteLine($"Input {fieldName}: ");
             int year = GetPositiveIntFromConsole("YEAR");
 
             int month = GetPositiveIntFromConsole("MONTH number");
@@ -86,7 +87,7 @@ namespace QAapp.CMD.ConsoleHelp
             while (!DateTime.TryParse(fullDate, out date))
             {
                 Console.WriteLine("Impossible date. Try again");
-                date = GetDateFromConsole();
+                date = GetDateFromConsole(fieldName);
                 fullDate = date.ToString();
             }
             return date;

@@ -15,15 +15,15 @@ namespace QAapp.CMD.Controllers
             switch (index)
             {
                 case 0:
-                    AddClient();
+                    OrderReader.AddOrder();
                     Console.Write("Client ");
                     break;
                 case 1:
-                    AddOrder();
+                    OrderReader.AddOrder();
                     Console.Write("Order ");
                     break;
             }
-            Console.WriteLine("has been created and added to database successfully!\n" +
+            Console.WriteLine("has been successfully created and added to database!\n" +
                         "Press any key to continue...");
             Console.ReadKey(true);
             MainMenu.Execute();
@@ -34,11 +34,10 @@ namespace QAapp.CMD.Controllers
             Client client = ClientReader.CreateClient();
             MainMenu._clientController.Create(client);
         }
-        public static void AddOrder()
-        {
-            Order order = OrderReader.CreateOrder();
-            MainMenu._orderController.Create(order);
-        }
+        //public static void AddOrder()
+        //{
+        //    OrderReader.AddOrder();
+        //}
     }
 }
 

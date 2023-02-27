@@ -1,4 +1,5 @@
 ﻿using QAapp.CMD.Menu.Blank;
+using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Menu
 {
@@ -66,6 +67,27 @@ namespace QAapp.CMD.Menu
                               "[Esc] Close app");
         }
 
+        public static Client ShowClientsAndChose(List<Client> clients)
+        {
+            if (clients.Count == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("It is no any client in database...\n" +
+                    "Press any key...");
+                Console.ReadKey(true);
+                MainMenu.Execute();
+                return null;
+            }
+            List<string> names = new();
+            foreach (var client in clients)
+            {
+                names.Add(client.ToString());
+            }
 
+            string title = "Choose a client:\n" +
+                     "ID | Name | Surname | Orders count | Date added | Phone number\n";
+            MenuHelper.ShowOptionsAndChoose(title, names, out int index);
+            return clients[index];
+        }
     }
 }

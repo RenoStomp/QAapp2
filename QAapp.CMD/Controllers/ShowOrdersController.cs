@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Primitives;
+using QAapp.CMD.Controllers.AddHelpers;
 using QAapp.CMD.Menu;
 using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
@@ -13,11 +15,11 @@ namespace QAapp.CMD.Controllers
             Client client;
             if (typeof(T) == typeof(Client))
             {
-                client = ShowClientsAndChose(listOfEntities as List<Client>);
+                client = MenuHelper.ShowClientsAndChose(listOfEntities as List<Client>);
             }
             else
             {
-                client = ShowClientsAndChose(new List<Client>(MainMenu._clientController.ReadAll()));
+                client = MenuHelper.ShowClientsAndChose(new List<Client>(MainMenu._clientController.ReadAll()));
             }
             if(client == null) 
             {
@@ -25,38 +27,47 @@ namespace QAapp.CMD.Controllers
             }
 
             List<Order> orders = MainMenu._clientController.ReadOrdersByClientId(client.ID);
+
             Console.Clear();
-            Console.WriteLine($"List of {client.FullName}'s orders:");
+            string title = $"List of {client.FullName}'s orders:\n";
             foreach(var order in orders)
             {
-                Console.WriteLine(order.ToString());
+                title += order.ToString() + "\n";
             }
-            //TODO: finish editing orders at clients orders list
-            Console.ReadKey();
+            if (orders.Count < 1)
+            {
+                title += "EMPTY :(((\n";
+            }
+            List<string> options = new() { "Add", "Edit", "Delete", "Main menu" };
+            MenuHelper.ShowOptionsAndChoose(title, options, out int index);
+
+            switch (index)
+            {
+                case 0:
+                    OrderReader.AddOrder(client);
+                    Console.WriteLine("Order hase been added successfully!\n" +
+                        "Press any key to continue...");
+                    Console.ReadKey(true);
+                    MainMenu.Execute();
+                    break;
+
+                case 1:
+
+                    Environment.Exit(0);
+                    break;
+
+                case 2:
+
+                    Environment.Exit(0);
+                    break;
+            }
+            MainMenu.Execute();
+
+
+            //TODO: EDIT and DELETE
 
         }
 
-        public static Client ShowClientsAndChose(List<Client> clients) 
-        {
-            if(clients.Count == 0) 
-            {
-                Console.Clear();
-                Console.WriteLine("It is no any client in database...\n" +
-                    "Press any key...");
-                Console.ReadKey(true);
-                MainMenu.Execute();
-                return null;
-            }
-            List<string> names = new();
-            foreach (var client in clients)
-            {
-                names.Add(client.ToString());
-            }
 
-            string title = "Choose a client:\n" +
-                     "ID | Name | Surname | Orders count | Date added | Phone number\n";
-            MenuHelper.ShowOptionsAndChoose(title, names, out int index);
-            return clients[index];
-        }
     }
 }
