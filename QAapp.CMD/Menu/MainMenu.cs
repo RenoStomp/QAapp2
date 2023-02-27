@@ -49,12 +49,7 @@ namespace QAapp.CMD.Menu
             Console.WriteLine("ID | Name | Surname | Orders count | Date added | Phone number\n");
             foreach (Client client in clients)
             {
-                Console.WriteLine($"{client.ID} | " +
-                                  $"{client.FirstName} | " +
-                                  $"{client.SecondName} | " +
-                                  $"{client.OrderAmount} | " +
-                                  $"{client.DateAdd} | " +
-                                  $"{client.PhoneNum}");
+                Console.WriteLine(client.ToString());
             }
             Console.ReadKey();
 
