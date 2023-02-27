@@ -25,8 +25,10 @@ namespace QAapp.CMD.Menu
             Console.CursorVisible = false;
             Console.Clear();
 
-            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index); 
+            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
 
+            _options = new() { "Add",  "Edit", "Delete", "Show client's orders", "Return"};
+            _title = "";
             switch (index)
             {
                 case 0:
@@ -45,20 +47,44 @@ namespace QAapp.CMD.Menu
 
             Console.Clear();
 
-            Console.WriteLine("Clients list:\n");
-            Console.WriteLine("ID | Name | Surname | Orders count | Date added | Phone number\n");
+            _title = "Clients list:\n" +
+                     "ID | Name | Surname | Orders count | Date added | Phone number\n";
             foreach (Client client in clients)
             {
-                Console.WriteLine(client.ToString());
+                _title += client.ToString() + "\n";
             }
+            
+            
+
+            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
+
+
+
             Console.ReadKey();
 
         }
         public void ShowOrders()
         {
+
+            List<Order> orders = _orderController.ReadAll();
+
             Console.Clear();
 
-            Console.WriteLine("ORDERS");
+            _title = "Orders list:\n" +
+                     "ID | Description | Client's name | Price | Closing date";
+            foreach (Order order in orders)
+            {
+                _title += order.ToString() + "\n";
+            }
+
+            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
+
+
+
+
+            Console.ReadKey();
         }
+
+        //public void
     }
 }

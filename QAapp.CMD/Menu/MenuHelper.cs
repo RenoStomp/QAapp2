@@ -38,7 +38,8 @@ namespace QAapp.CMD.Menu
             }
             Console.Clear();
 
-            Console.WriteLine("Loading...");
+            Console.WriteLine("Do not press anything\n" +
+                              "Loading...");
         }
 
         public static void ShowOptions(string title, List<string> lines, int index)
