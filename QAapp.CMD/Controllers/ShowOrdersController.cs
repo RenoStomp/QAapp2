@@ -51,8 +51,7 @@ namespace QAapp.CMD.Controllers
                     break;
 
                 case 1:
-
-                    Environment.Exit(0);
+                    EditController<T>.EditEntity();
                     break;
 
                 case 2:

@@ -47,8 +47,8 @@ namespace QAapp.CMD.ConsoleHelp
         public static float GetFloatFromConsole(string fieldName)
         {
             Console.Write($"Input {fieldName} using point or comma: ");
-            float value = 0;
-            while(!float.TryParse(Console.ReadLine(), out value))
+            float value;
+            while (!float.TryParse(Console.ReadLine(), out value))
             {
                 Console.Write("Incorrect input. Only fractional numbers allowed.\n " +
                             "Try again and don't forget to use point or comma (only one of those signs): ");

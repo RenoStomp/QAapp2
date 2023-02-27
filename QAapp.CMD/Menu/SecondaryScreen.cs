@@ -35,7 +35,6 @@ namespace QAapp.CMD.Menu
 
             SecondaryScreenChoise<T>(index, entities);
 
-            Console.ReadKey();
         }
         public static void SecondaryScreenChoise<T>(int index, List<T> list)
             where T : BaseEntity
@@ -47,8 +46,7 @@ namespace QAapp.CMD.Menu
                     break;
 
                 case 1:
-
-                    Environment.Exit(0);
+                    EditController<T>.EditEntity();
                     break;
 
                 case 2:
