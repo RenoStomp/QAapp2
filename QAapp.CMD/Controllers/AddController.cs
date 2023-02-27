@@ -1,6 +1,5 @@
 ﻿using QAapp.CMD.Controllers.AddHelpers;
 using QAapp.CMD.Menu;
-using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Controllers
@@ -34,18 +33,5 @@ namespace QAapp.CMD.Controllers
             Client client = ClientReader.CreateClient();
             MainMenu._clientController.Create(client);
         }
-        //public static void AddOrder()
-        //{
-        //    OrderReader.AddOrder();
-        //}
     }
 }
-
-//if (typeof(T) == typeof(Order))
-//{
-
-//}
-//else if (typeof(T) == typeof(Client))
-//{
-
-//}

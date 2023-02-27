@@ -13,14 +13,12 @@ namespace QAapp.CMD.Controllers.AddHelpers
             string secondName = ConsoleHelper.GetNotEmptyStringFromConsole("second name");
             string phoneNumber = ConsoleHelper.GetPhoneNumberFromConsole();
             DateTime dateAdd = DateTime.Now;
-            uint orderAmount = 0;
             Client client = new Client() 
             { 
                 FirstName = firstName,
                 SecondName = secondName,
                 PhoneNum = phoneNumber,
                 DateAdd = dateAdd,
-               // OrderAmount = orderAmount
             };
             Console.CursorVisible = false;
 

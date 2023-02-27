@@ -53,7 +53,6 @@ namespace QAapp.CMD.Menu
 
                 case 2:
                     DeleteController<T>.DeleteEntity();
-                    //Environment.Exit(0);
                     break;
 
                 case 3:

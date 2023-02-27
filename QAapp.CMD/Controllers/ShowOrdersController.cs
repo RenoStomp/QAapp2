@@ -57,14 +57,12 @@ namespace QAapp.CMD.Controllers
 
                 case 2:
                     DeleteController<Order>.DeleteEntity(client);
-                    //Environment.Exit(0);
                     break;
             }
             MainMenu.Execute();
 
 
-            //TODO: EDIT and DELETE
-            //TODO: add all OrderAmount-- counters and ++
+            //TODO: finish EDIT
         }
 
 
