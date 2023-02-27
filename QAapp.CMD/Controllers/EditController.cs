@@ -11,20 +11,20 @@ namespace QAapp.CMD.Controllers
 
         public static void EditEntity()
         {
-            if(typeof(T) == typeof(Order))
+            if (typeof(T) == typeof(Order))
             {
                 List<Order> orders = MainMenu._orderController.ReadAll();
-                if(orders.Count < 1)
+                if (orders.Count < 1)
                 {
                     Console.Clear();
                     Console.WriteLine("It is no any orders in database :(\n" +
                         "Press any key to continue...");
                     Console.ReadKey();
                     MainMenu.Execute();
-                    
+
                 }
                 List<string> lines = new();
-                foreach(var order in orders)
+                foreach (var order in orders)
                 {
                     lines.Add(order.ToString());
                 }
@@ -47,7 +47,7 @@ namespace QAapp.CMD.Controllers
 
                 }
                 List<string> lines = new();
-                foreach(var client in clients)
+                foreach (var client in clients)
                 {
                     lines.Add(client.ToString());
                 }

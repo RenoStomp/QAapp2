@@ -15,7 +15,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
             CheckForClients(clients);
 
             List<string> lines = new();
-            foreach(Client client in clients)
+            foreach (Client client in clients)
             {
                 lines.Add(client.ToString());
             }
@@ -40,7 +40,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
             string description = ConsoleHelper.GetStringFromConsole("description");
             float orderPrice = ConsoleHelper.GetFloatFromConsole("order price");
             DateTime closeDate = ConsoleHelper.GetDateFromConsole("closing date");
-            while(closeDate < orderDate)
+            while (closeDate < orderDate)
             {
                 Console.WriteLine($"Please input date AFTER {orderDate.Date:dd MMM yyyy}");
                 closeDate = ConsoleHelper.GetDateFromConsole("closing date");
@@ -61,7 +61,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
         }
         public static void CheckForClients(List<Client> clients)
         {
-            if(clients.Count < 1)
+            if (clients.Count < 1)
             {
                 Console.WriteLine("It is no clients in database\n" +
                     "Do you wanna add first?\n" +

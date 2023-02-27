@@ -29,7 +29,7 @@ namespace QAapp.CMD.Controllers.EditHelpers
                     case 2:
                         Console.WriteLine($"Old date of adding: {order.CloseDate.Date:dd MMM yyyy}\n");
                         order.CloseDate = ConsoleHelper.GetDateFromConsole("new date of closing");
-                        break;          
+                        break;
                     case 3:
                         Console.WriteLine("OK 😊");
                         break;
@@ -49,7 +49,7 @@ namespace QAapp.CMD.Controllers.EditHelpers
         public static void UpdateOrder(Client client)
         {
             List<Order> orders = MainMenu._orderController.ReadOrdersByClientId(client.ID);
-            if(orders.Count < 1)
+            if (orders.Count < 1)
             {
                 Console.WriteLine("OOOOPS!\n" +
                     "No orders to edit here!\n" +

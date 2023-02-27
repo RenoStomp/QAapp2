@@ -13,8 +13,8 @@ namespace QAapp.CMD.Controllers.AddHelpers
             string secondName = ConsoleHelper.GetNotEmptyStringFromConsole("second name");
             string phoneNumber = ConsoleHelper.GetPhoneNumberFromConsole("phone number");
             DateTime dateAdd = DateTime.Now;
-            Client client = new Client() 
-            { 
+            Client client = new Client()
+            {
                 FirstName = firstName,
                 SecondName = secondName,
                 PhoneNum = phoneNumber,

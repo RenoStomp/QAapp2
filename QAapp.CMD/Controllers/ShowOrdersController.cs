@@ -60,11 +60,6 @@ namespace QAapp.CMD.Controllers
                     break;
             }
             MainMenu.Execute();
-
-
-            //TODO: finish EDIT
         }
-
-
     }
 }

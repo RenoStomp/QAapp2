@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using QAapp.Data.Model.Common;
+﻿using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
 using QAapp.Data.Repositories.Interfaces;
 using QAapp.Data.SqlServer;
@@ -53,7 +52,7 @@ namespace QAapp.Data.Repositories.Implementations
         {
             var table = Ctx.Set<T>();
             if (table == null) return null;
-            
+
             var list = table.ToList();
             return list;
         }
@@ -62,7 +61,7 @@ namespace QAapp.Data.Repositories.Implementations
         {
             var table = Ctx.Set<T>();
             if (table == null) return null;
-            
+
             var entity = table.FirstOrDefault(en => en.ID.Equals(id));
             return entity;
         }
@@ -71,7 +70,7 @@ namespace QAapp.Data.Repositories.Implementations
         {
             var table = Ctx.Set<T>();
             if (table == null) return null;
-            
+
             table.Update(entity);
             Ctx.SaveChanges();
             return entity;

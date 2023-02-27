@@ -1,6 +1,4 @@
-﻿using QAapp.CMD.Controllers;
-using QAapp.Data.Model.Common;
-using QAapp.Data.Model.Entities;
+﻿using QAapp.Data.Model.Entities;
 using QAapp.Data.Repositories.Implementations;
 using QAapp.Data.SqlServer;
 
@@ -10,9 +8,9 @@ namespace QAapp.CMD.Menu
     {
         internal static List<string> _options;
         internal static string _title;
-        
+
         public static AppDbContext ctx = new();
-        
+
         internal static readonly DbRepository<Order> _orderController = new DbRepository<Order>(ctx);
         internal static readonly DbRepository<Client> _clientController = new DbRepository<Client>(ctx);
 
@@ -30,7 +28,7 @@ namespace QAapp.CMD.Menu
 
             MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
 
-            _options = new() { "Add",  "Edit", "Delete", "Show client's orders", "Return"};
+            _options = new() { "Add", "Edit", "Delete", "Show client's orders", "Return" };
             _title = "";
             switch (index)
             {

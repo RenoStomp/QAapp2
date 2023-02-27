@@ -12,7 +12,7 @@ namespace QAapp.CMD.Controllers.EditHelpers
             do
             {
                 string title = "Choose an option:\n";
-                List<string> options = new() { "Change first name", "Change last name", 
+                List<string> options = new() { "Change first name", "Change last name",
                     "Change phone number", "Finish editing and save" };
                 MenuHelper.ShowOptionsAndChoose(title, options, out index);
                 Console.Clear();
