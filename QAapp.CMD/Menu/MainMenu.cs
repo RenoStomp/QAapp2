@@ -15,6 +15,7 @@ namespace QAapp.CMD.Menu
         
         internal static readonly DbRepository<Order> _orderController = new DbRepository<Order>(ctx);
         internal static readonly DbRepository<Client> _clientController = new DbRepository<Client>(ctx);
+        private static readonly List<Client> clients = _clientController.ReadAll();
 
 
         public static void Execute()

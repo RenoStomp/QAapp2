@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Primitives;
-using QAapp.CMD.Controllers.AddHelpers;
+﻿using QAapp.CMD.Controllers.AddHelpers;
 using QAapp.CMD.Menu;
 using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
@@ -19,9 +17,9 @@ namespace QAapp.CMD.Controllers
             }
             else
             {
-                client = MenuHelper.ShowClientsAndChose(new List<Client>(MainMenu._clientController.ReadAll()));
+                client = MenuHelper.ShowClientsAndChose(MainMenu._clientController.ReadAll());
             }
-            if(client == null) 
+            if (client == null)
             {
                 MainMenu.Execute();
             }
@@ -29,8 +27,9 @@ namespace QAapp.CMD.Controllers
             List<Order> orders = MainMenu._clientController.ReadOrdersByClientId(client.ID);
 
             Console.Clear();
-            string title = $"List of {client.FullName}'s orders:\n";
-            foreach(var order in orders)
+            string title = $"List of {client.FullName}'s orders:\n" +
+                           $"ID | Description | Order's date | Client's name | Price | Closing date\n\n";
+            foreach (var order in orders)
             {
                 title += order.ToString() + "\n";
             }
@@ -57,15 +56,15 @@ namespace QAapp.CMD.Controllers
                     break;
 
                 case 2:
-
-                    Environment.Exit(0);
+                    DeleteController<Order>.DeleteEntity(client);
+                    //Environment.Exit(0);
                     break;
             }
             MainMenu.Execute();
 
 
             //TODO: EDIT and DELETE
-
+            //TODO: add all OrderAmount-- counters and ++
         }
 
 

@@ -86,8 +86,30 @@ namespace QAapp.CMD.Menu
 
             string title = "Choose a client:\n" +
                      "ID | Name | Surname | Orders count | Date added | Phone number\n";
-            MenuHelper.ShowOptionsAndChoose(title, names, out int index);
+            ShowOptionsAndChoose(title, names, out int index);
             return clients[index];
+        }
+        public static Order ShowOrdersAndChose(List<Order> orders)
+        {
+            if (orders.Count == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("It is no any orders in database...\n" +
+                    "Press any key...");
+                Console.ReadKey(true);
+                MainMenu.Execute();
+                return null;
+            }
+            List<string> lines = new();
+            foreach (var order in orders)
+            {
+                lines.Add(order.ToString());
+            }
+
+            string title = "Choose an order:\n" +
+                     "ID | Description | Order's date | Client's name | Price | Closing date\n";
+            MenuHelper.ShowOptionsAndChoose(title, lines, out int index);
+            return orders[index];
         }
     }
 }

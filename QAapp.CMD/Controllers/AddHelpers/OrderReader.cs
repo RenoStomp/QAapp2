@@ -28,7 +28,6 @@ namespace QAapp.CMD.Controllers.AddHelpers
         public static void AddOrder(Client client)
         {
             Order order = CreateOrder(client);
-
             client.OrderAmount++;
             MainMenu._orderController.Create(order);
         }
@@ -41,7 +40,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
             string description = ConsoleHelper.GetStringFromConsole("description");
             float orderPrice = ConsoleHelper.GetFloatFromConsole("order price");
             DateTime closeDate = ConsoleHelper.GetDateFromConsole("closing date");
-            while(closeDate <= orderDate)
+            while(closeDate < orderDate)
             {
                 Console.WriteLine($"Please input date AFTER {orderDate.Date:dd MMM yyyy}");
                 closeDate = ConsoleHelper.GetDateFromConsole("closing date");

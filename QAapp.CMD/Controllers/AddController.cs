@@ -15,7 +15,7 @@ namespace QAapp.CMD.Controllers
             switch (index)
             {
                 case 0:
-                    OrderReader.AddOrder();
+                    AddClient();
                     Console.Write("Client ");
                     break;
                 case 1:

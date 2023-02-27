@@ -20,7 +20,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
                 SecondName = secondName,
                 PhoneNum = phoneNumber,
                 DateAdd = dateAdd,
-                OrderAmount = orderAmount
+               // OrderAmount = orderAmount
             };
             Console.CursorVisible = false;
 

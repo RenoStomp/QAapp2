@@ -18,12 +18,12 @@ namespace QAapp.CMD.Menu
             if(typeof(T) == typeof(Client))
             {
                 title = "Clients list:\n" +
-                     "ID | Name | Surname | Orders count | Date added | Phone number\n";
+                     "ID | Name | Surname | Orders count | Date added | Phone number\n\n";
             }
             else if(typeof(T) == typeof(Order))
             {
                 title = "Orders list:\n" +
-                     "ID | Description | Order's date | Client's name | Price | Closing date\n";
+                     "ID | Description | Order's date | Client's name | Price | Closing date\n\n";
             }
             
             foreach (var entity in entities)
@@ -52,8 +52,8 @@ namespace QAapp.CMD.Menu
                     break;
 
                 case 2:
-
-                    Environment.Exit(0);
+                    DeleteController<T>.DeleteEntity();
+                    //Environment.Exit(0);
                     break;
 
                 case 3:
