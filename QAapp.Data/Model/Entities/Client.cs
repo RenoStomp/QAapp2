@@ -14,10 +14,9 @@ namespace QAapp.Data.Model.Entities
         public DateTime DateAdd { get; set; }
         public ICollection<Order> Orders { get; set; }
 
-        public Client(string phoneNum, DateTime dateAdd, string firstName, string secondName)
+        public Client(string phoneNum, string firstName, string secondName)
         {
             PhoneNum = phoneNum;
-            DateAdd = dateAdd;
             FirstName = firstName;
             SecondName = secondName;
             DateAdd = DateTime.Now;
