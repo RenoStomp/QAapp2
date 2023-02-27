@@ -16,11 +16,17 @@ namespace QAapp.CMD.Controllers
             {
                 case 0:
                     AddClient();
+                    Console.Write("Client ");
                     break;
                 case 1:
                     AddOrder();
+                    Console.Write("Order ");
                     break;
             }
+            Console.WriteLine("created and added to database successfully!\n" +
+                        "Press any key to continue...");
+            Console.ReadKey(true);
+            MainMenu.Execute();
         }
 
         public static void AddClient()
