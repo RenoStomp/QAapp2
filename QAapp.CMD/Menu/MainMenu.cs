@@ -25,7 +25,8 @@ namespace QAapp.CMD.Menu
             Console.CursorVisible = false;
             Console.Clear();
 
-            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
+            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index); 
+
             switch (index)
             {
                 case 0:
@@ -39,13 +40,23 @@ namespace QAapp.CMD.Menu
 
         public void ShowClients()
         {
-            //_lines.Clear();
-            //_title = "";
-            //for()
+
+            List<Client> clients = _clientController.ReadAll();
 
             Console.Clear();
 
             Console.WriteLine("Clients list:\n");
+            Console.WriteLine("ID | Name | Surname | Orders count | Date added | Phone number\n");
+            foreach (Client client in clients)
+            {
+                Console.WriteLine($"{client.ID} | " +
+                                  $"{client.FirstName} | " +
+                                  $"{client.SecondName} | " +
+                                  $"{client.OrderAmount} | " +
+                                  $"{client.DateAdd} | " +
+                                  $"{client.PhoneNum}");
+            }
+            Console.ReadKey();
 
         }
         public void ShowOrders()

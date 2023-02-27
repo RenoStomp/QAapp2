@@ -36,7 +36,9 @@ namespace QAapp.CMD.Menu
             {
                 LastMessage.TheEnd();
             }
+            Console.Clear();
 
+            Console.WriteLine("Loading...");
         }
 
         public static void ShowOptions(string title, List<string> lines, int index)
