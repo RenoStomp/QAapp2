@@ -48,7 +48,7 @@ namespace QAapp.CMD.Controllers
         {
             List<Order> orders = MainMenu._clientController.ReadOrdersByClientId(clientNow.ID);
             var order = MenuHelper.ShowOrdersAndChose(orders);
-            //var client = MainMenu._clientController.ReadById((int)order.ClientID);
+
             MainMenu._orderController.Delete(order);
             clientNow.OrderAmount--;
             Console.Clear();

@@ -1,9 +1,7 @@
 ﻿using QAapp.CMD.Menu;
-using QAapp.Data.Model.Entities;
-using QAapp.Data.Repositories.Implementations;
-using QAapp.Data.SqlServer;
 
-Console.WriteLine("Loading...");
+Console.WriteLine("Do not press anything\n" +
+                  "Loading...");
 
 
 MainMenu.Execute();
