@@ -23,7 +23,7 @@ namespace QAapp.CMD.Controllers
                     Console.Write("Order ");
                     break;
             }
-            Console.WriteLine("created and added to database successfully!\n" +
+            Console.WriteLine("has been created and added to database successfully!\n" +
                         "Press any key to continue...");
             Console.ReadKey(true);
             MainMenu.Execute();

@@ -25,11 +25,13 @@ namespace QAapp.CMD.Controllers
             }
 
             List<Order> orders = MainMenu._clientController.ReadOrdersByClientId(client.ID);
+            Console.Clear();
             Console.WriteLine($"List of {client.FullName}'s orders:");
             foreach(var order in orders)
             {
                 Console.WriteLine(order.ToString());
             }
+            //TODO: finish editing orders at clients orders list
             Console.ReadKey();
 
         }

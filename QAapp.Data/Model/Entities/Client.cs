@@ -12,7 +12,7 @@ namespace QAapp.Data.Model.Entities
 
         public override string ToString()
         {
-            return $"{ID} | {FirstName} | {SecondName} | {OrderAmount} | {DateAdd.Date} | {PhoneNum}";
+            return $"{ID} | {FirstName} | {SecondName} | {OrderAmount} | {DateAdd.Date:dd MMM yyyy} | {PhoneNum}";
         }
     }
 }

@@ -23,7 +23,7 @@ namespace QAapp.CMD.Menu
             else if(typeof(T) == typeof(Order))
             {
                 title = "Orders list:\n" +
-                     "ID | Description | Client's name | Price | Closing date";
+                     "ID | Description | Order's date | Client's name | Price | Closing date";
             }
             MenuHelper.ShowOptionsAndChoose(title, options, out int index);
 
