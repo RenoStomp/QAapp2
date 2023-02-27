@@ -37,8 +37,7 @@ namespace QAapp.CMD.Menu
             switch (index)
             {
                 case 0:
-
-                    Environment.Exit(0);
+                    AddController.AddEntity();
                     break;
 
                 case 1:

@@ -56,21 +56,5 @@ namespace QAapp.CMD.Controllers
             MenuHelper.ShowOptionsAndChoose(title, names, out int index);
             return clients[index];
         }
-
-        public static List<Order> FindOrdersOf(Client client)
-        {
-
-
-            return null;
-        }
     }
 }
-
-//if (typeof(T) == typeof(Order))
-//{
-
-//}
-//else if (typeof(T) == typeof(Client))
-//{
-
-//}

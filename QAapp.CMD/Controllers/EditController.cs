@@ -1,11 +1,12 @@
 ﻿using QAapp.Data.Model.Common;
-using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Controllers
 {
     public static class EditController<T>
         where T : BaseEntity
     {
+
+
 
     }
 }

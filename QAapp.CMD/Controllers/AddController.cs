@@ -1,12 +1,30 @@
-﻿using QAapp.Data.Model.Common;
-using QAapp.Data.Model.Entities;
+﻿using QAapp.CMD.Menu;
+using QAapp.Data.Model.Common;
 
 namespace QAapp.CMD.Controllers
 {
-    public static class AddController<T>
-        where T : BaseEntity
+    public static class AddController
     {
+        public static void AddEntity()
+        {
+            string title = "Choose what you wanna add:";
+            List<string> options = new() { "Client", "Order" };
+            MenuHelper.ShowOptionsAndChoose(title, options, out int index);
+            switch (index)
+            {
+                case 0:
 
+                    break;
+                case 1:
+
+                    break;
+            }
+        }
+
+        public static void AddClient()
+        {
+
+        }
     }
 }
 
