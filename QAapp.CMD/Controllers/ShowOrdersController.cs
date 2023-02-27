@@ -13,7 +13,6 @@ namespace QAapp.CMD.Controllers
             Client client;
             if (typeof(T) == typeof(Client))
             {
-
                 client = ShowClientsAndChose(listOfEntities as List<Client>);
             }
             else
@@ -24,6 +23,7 @@ namespace QAapp.CMD.Controllers
             {
                 MainMenu.Execute();
             }
+
             List<Order> orders = MainMenu._clientController.ReadOrdersByClientId(client.ID);
             Console.WriteLine($"List of {client.FullName}'s orders:");
             foreach(var order in orders)

@@ -3,7 +3,7 @@ using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Controllers
 {
-    public class DeleteController<T>
+    public static class DeleteController<T>
         where T : BaseEntity
     {
 

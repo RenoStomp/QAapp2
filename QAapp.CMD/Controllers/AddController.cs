@@ -3,7 +3,7 @@ using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Controllers
 {
-    public class AddController<T>
+    public static class AddController<T>
         where T : BaseEntity
     {
 

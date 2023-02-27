@@ -3,7 +3,7 @@ using QAapp.Data.Model.Entities;
 
 namespace QAapp.CMD.Controllers
 {
-    public class EditController<T>
+    public static class EditController<T>
         where T : BaseEntity
     {
 
