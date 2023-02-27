@@ -44,5 +44,18 @@ namespace QAapp.CMD.Controllers.EditHelpers
             Console.WriteLine("Order has been updated successfully!");
             MainMenu.Execute();
         }
+        public static void UpdateOrder(Client client)
+        {
+            List<Order> orders = MainMenu._orderController.ReadOrdersByClientId(client.ID);
+            List<string> lines = new();
+            foreach (var order in orders)
+            {
+                lines.Add(order.ToString());
+            }
+            string title = "Choose which order you want to edit: ";
+            MenuHelper.ShowOptionsAndChoose(title, lines, out int index);
+            Order orderForEdit = orders[index];
+            UpdateOrder(orderForEdit);
+        }
     }
 }

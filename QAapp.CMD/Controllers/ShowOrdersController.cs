@@ -1,4 +1,5 @@
 ﻿using QAapp.CMD.Controllers.AddHelpers;
+using QAapp.CMD.Controllers.EditHelpers;
 using QAapp.CMD.Menu;
 using QAapp.Data.Model.Common;
 using QAapp.Data.Model.Entities;
@@ -51,7 +52,7 @@ namespace QAapp.CMD.Controllers
                     break;
 
                 case 1:
-                    EditController<T>.EditEntity();
+                    OrderEdit.UpdateOrder(client);
                     break;
 
                 case 2:
