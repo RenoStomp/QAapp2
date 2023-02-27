@@ -49,6 +49,14 @@ namespace QAapp.CMD.Controllers.EditHelpers
         public static void UpdateOrder(Client client)
         {
             List<Order> orders = MainMenu._orderController.ReadOrdersByClientId(client.ID);
+            if(orders.Count < 1)
+            {
+                Console.WriteLine("OOOOPS!\n" +
+                    "No orders to edit here!\n" +
+                    "Press any button to return to the Main Menu...");
+                Console.ReadKey(true);
+                MainMenu.Execute();
+            }
             List<string> lines = new();
             foreach (var order in orders)
             {
