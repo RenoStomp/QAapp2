@@ -10,8 +10,8 @@ namespace QAapp.CMD.Menu
         private List<string> _options;
         private string _title;
 
-        private readonly DbRepository<Order> _orderController;
-        private readonly DbRepository<Client> _clientController;
+        internal readonly DbRepository<Order> _orderController;
+        internal readonly DbRepository<Client> _clientController;
 
         public MainMenu(DbRepository<Order> orderController, DbRepository<Client> clientController)
         {
@@ -20,6 +20,7 @@ namespace QAapp.CMD.Menu
         }
         public void Execute()
         {
+            start:
             _options = new() { "Clients", "Orders" };
             _title = "MAIN MENU\n\n" +
                      "Please choose an option:";
@@ -34,85 +35,14 @@ namespace QAapp.CMD.Menu
             switch (index)
             {
                 case 0:
-                    ShowClients();
+                    SecondaryScreen.ShowEntities(_clientController, _options, this);
                     break;
                 case 1:
-                    ShowOrders();
+                    SecondaryScreen.ShowEntities(_orderController, _options, this);
                     break;
             }
         }
 
-        public void ShowClients()
-        {
 
-            List<Client> clients = _clientController.ReadAll();
-
-            Console.Clear();
-
-            _title = "Clients list:\n" +
-                     "ID | Name | Surname | Orders count | Date added | Phone number\n";
-            foreach (Client client in clients)
-            {
-                _title += client.ToString() + "\n";
-            }
-            
-            
-
-            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
-
-            SecondaryScreenChoise<Client>(index, clients);
-
-
-            Console.ReadKey();
-
-        }
-        public void ShowOrders()
-        {
-
-            List<Order> orders = _orderController.ReadAll();
-
-            Console.Clear();
-
-            _title = "Orders list:\n" +
-                     "ID | Description | Client's name | Price | Closing date";
-            foreach (Order order in orders)
-            {
-                _title += order.ToString() + "\n";
-            }
-
-            MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
-
-            SecondaryScreenChoise<Order>(index, orders);
-
-
-            Console.ReadKey();
-        }
-
-        public void SecondaryScreenChoise<T>(int index, List<T> list)
-            where T : BaseEntity
-        {
-            switch (index)
-            {
-                case 0:
-
-                    break;
-
-                case 1:
-
-                    break;
-
-                case 2:
-
-                    break;
-
-                case 3:
-                    ShowOrdersController<T>.ShowOrders(list);
-                    break;
-
-                case 4:
-                    Execute();
-                    break;
-            }
-        }
     }
 }

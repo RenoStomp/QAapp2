@@ -77,7 +77,7 @@ namespace QAapp.Data.Repositories.Implementations
             return entity;
         }
 
-        public List<Order> ReadByClientId(int clientId)
+        public List<Order> ReadOrdersByClientId(uint clientId)
         {
             var table = Ctx.Set<Order>();
             if (table == null) return null;

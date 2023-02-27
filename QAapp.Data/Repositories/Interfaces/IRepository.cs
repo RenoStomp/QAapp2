@@ -10,7 +10,7 @@ namespace QAapp.Data.Repositories.Interfaces
         public T Create(T entity);   // C
         public List<T> ReadAll();    // R
         public T ReadById(int id);   // R
-        public List<Order> ReadByClientId(int clientId);  // R
+        public List<Order> ReadOrdersByClientId(uint clientId);  // R
         public T Update(T entity);   // U
         public void Delete(T entity);   // D
         public void DeleteById(int id); // D
