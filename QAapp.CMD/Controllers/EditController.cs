@@ -14,6 +14,15 @@ namespace QAapp.CMD.Controllers
             if(typeof(T) == typeof(Order))
             {
                 List<Order> orders = MainMenu._orderController.ReadAll();
+                if(orders.Count < 1)
+                {
+                    Console.Clear();
+                    Console.WriteLine("It is no any orders in database :(\n" +
+                        "Press any key to continue...");
+                    Console.ReadKey();
+                    MainMenu.Execute();
+                    
+                }
                 List<string> lines = new();
                 foreach(var order in orders)
                 {
@@ -28,6 +37,15 @@ namespace QAapp.CMD.Controllers
             else
             {
                 List<Client> clients = MainMenu._clientController.ReadAll();
+                if (clients.Count < 1)
+                {
+                    Console.Clear();
+                    Console.WriteLine("It is no any clients in database :(\n" +
+                        "Press any key to continue...");
+                    Console.ReadKey();
+                    MainMenu.Execute();
+
+                }
                 List<string> lines = new();
                 foreach(var client in clients)
                 {
