@@ -24,11 +24,20 @@ namespace QAapp.CMD.Controllers
                 Order orderForEdit = orders[index];
 
                 OrderEdit.UpdateOrder(orderForEdit);
+            }
+            else
+            {
+                List<Client> clients = MainMenu._clientController.ReadAll();
+                List<string> lines = new();
+                foreach(var client in clients)
+                {
+                    lines.Add(client.ToString());
+                }
+                string title = "Choose which client you want to edit: ";
+                MenuHelper.ShowOptionsAndChoose(title, lines, out int index);
+                Client clientForEdit = clients[index];
 
-                //Console.WriteLine("Order have been updated successfully!\n" +
-                //    "Press any key to return to the Main Menu...");
-                //Console.ReadKey(true);
-                //MainMenu.Execute();
+                ClientEdit.UpdateClient(clientForEdit);
             }
         }
 

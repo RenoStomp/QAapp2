@@ -41,7 +41,9 @@ namespace QAapp.CMD.Controllers.EditHelpers
 
             MainMenu._orderController.Update(order);
             Console.Clear();
-            Console.WriteLine("Order has been updated successfully!");
+            Console.WriteLine("Order has been updated successfully!\n" +
+                "Press any button to return to the Main Menu");
+            Console.ReadKey(true);
             MainMenu.Execute();
         }
         public static void UpdateOrder(Client client)

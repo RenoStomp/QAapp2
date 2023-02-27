@@ -11,7 +11,7 @@ namespace QAapp.CMD.Controllers.AddHelpers
             Console.CursorVisible = true;
             string firstName = ConsoleHelper.GetNotEmptyStringFromConsole("first name");
             string secondName = ConsoleHelper.GetNotEmptyStringFromConsole("second name");
-            string phoneNumber = ConsoleHelper.GetPhoneNumberFromConsole();
+            string phoneNumber = ConsoleHelper.GetPhoneNumberFromConsole("phone number");
             DateTime dateAdd = DateTime.Now;
             Client client = new Client() 
             { 

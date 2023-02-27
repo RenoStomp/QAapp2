@@ -55,9 +55,9 @@ namespace QAapp.CMD.ConsoleHelp
             }
             return value;
         }
-        public static string GetPhoneNumberFromConsole()
+        public static string GetPhoneNumberFromConsole(string fieldName)
         {
-            Console.Write("Input your phone number: +996");
+            Console.Write($"Input your {fieldName}: +996");
             int phoneNum;
             while (!int.TryParse(Console.ReadLine(), out phoneNum) || phoneNum.ToString().Length != 9)
             {
