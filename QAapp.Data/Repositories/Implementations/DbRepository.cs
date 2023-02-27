@@ -1,4 +1,6 @@
-﻿using QAapp.Data.Model.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using QAapp.Data.Model.Common;
+using QAapp.Data.Model.Entities;
 using QAapp.Data.Repositories.Interfaces;
 using QAapp.Data.SqlServer;
 
@@ -73,6 +75,15 @@ namespace QAapp.Data.Repositories.Implementations
             table.Update(entity);
             Ctx.SaveChanges();
             return entity;
+        }
+
+        public List<Order> ReadByClientId(int clientId)
+        {
+            var table = Ctx.Set<Order>();
+            if (table == null) return null;
+
+            var list = table.Where(o => o.ClientID == clientId).ToList();
+            return list;
         }
     }
 }

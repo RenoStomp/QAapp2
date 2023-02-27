@@ -10,7 +10,7 @@
         /// </summary>
         internal static void TheEnd()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
 
             string endLine = Decrypting.decryptedText;

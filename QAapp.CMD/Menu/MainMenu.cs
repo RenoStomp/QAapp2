@@ -1,4 +1,6 @@
-﻿using QAapp.Data.Model.Entities;
+﻿using QAapp.CMD.Controllers;
+using QAapp.Data.Model.Common;
+using QAapp.Data.Model.Entities;
 using QAapp.Data.Repositories.Implementations;
 
 namespace QAapp.CMD.Menu
@@ -58,6 +60,7 @@ namespace QAapp.CMD.Menu
 
             MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
 
+            SecondaryScreenChoise<Client>(index, clients);
 
 
             Console.ReadKey();
@@ -79,12 +82,37 @@ namespace QAapp.CMD.Menu
 
             MenuHelper.ShowOptionsAndChoose(_title, _options, out int index);
 
-
+            SecondaryScreenChoise<Order>(index, orders);
 
 
             Console.ReadKey();
         }
 
-        //public void
+        public void SecondaryScreenChoise<T>(int index, List<T> list)
+            where T : BaseEntity
+        {
+            switch (index)
+            {
+                case 0:
+
+                    break;
+
+                case 1:
+
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+                    ShowOrdersController<T>.ShowOrders(list);
+                    break;
+
+                case 4:
+                    Execute();
+                    break;
+            }
+        }
     }
 }
