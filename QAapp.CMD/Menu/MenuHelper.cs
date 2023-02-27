@@ -88,7 +88,8 @@ namespace QAapp.CMD.Menu
                      "ID | Name | Surname | Orders count | Date added | Phone number\n";
             ShowOptionsAndChoose(title, names, out int index);
             return clients[index];
-        }
+        } 
+        //нам не хватает спонсорских средств, так что для того, что бы объединить эти два метода, нам нужно ещё $300000
         public static Order ShowOrdersAndChose(List<Order> orders)
         {
             if (orders.Count == 0)
